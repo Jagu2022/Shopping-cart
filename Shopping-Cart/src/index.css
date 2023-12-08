@@ -1,0 +1,128 @@
+*{
+  font-family: Arial;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+img{
+  width: 200px;
+}
+.card-btn{
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10pc;
+  background-color: #7b39fa;
+  background-color: #39d6fa;
+  margin-left: 5px;
+}
+.rm-btn{
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10pc;
+  background-color: #f96363;
+  color: #fbfdfd;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  
+}
+button:hover{
+  background-color: black;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+}
+.navDiv{
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 0 10px 0;
+  width: 100%;
+}
+.navNav button{
+  margin-right: 10px;
+  width: 80px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50pc;
+  
+}
+.cartBtn{
+  position: relative;
+  top: 5px;
+}
+.card{
+  border: 1px solid dodgerblue;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px dodgerblue;
+  
+}
+.card p{
+  font-size: 8px;
+}
+.card h3{
+  font-size: 18px;
+}
+.length{
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 17px;
+  right: 15px;
+  top: -35px;
+}
+.navDiv{
+  position: sticky;
+  top:0;
+}
+.cartMenu{
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 10px dodgerblue;
+}
+.warning{
+  background-color: #fb6969;
+  border-radius:5px;
+  padding: 5px;
+}
+.rm-btnDiv{
+  margin-top: 20px;
+}
+.spanDiv{
+  display: flex;
+  justify-content: space-evenly;
+}
+span button{
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+  border:none;
+  background-color: #ffffff;
+  color: #a1a1a1;
+}
+span button:hover{
+  background-color: #a1a1a1;
+}
+.quantity{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 1px;
+}
