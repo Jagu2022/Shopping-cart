@@ -13,13 +13,32 @@ export const ShopContextProvider = ({children}) => {
   const [price, setPrice] = useState(0)
   const [warning, setWarning] = useState(false)
   const [itemCart, setItemCart] = useState([])
+  const[load,setLoad] = useState(false)
+  const[Error,setError] = useState({
+    status:false, msg: 'somting went wrong'
+  })
   
 //fetching data from url
 
   const fetchApi = async(api) => {
-    const response = await fetch(api)
-    const item = await response.json()
-    setData(item)
+    setLoad(true)
+    setError({
+    status:false, msg: 'somting went wrong'
+  })
+    try{
+      const response = await fetch(api)
+      const item = await response.json()
+      setData(item)
+      setLoad(false)
+      setError({
+      status:false, msg: 'somting went wrong'
+  })
+    }catch(error) {
+      setLoad(false)
+      setError({
+      status:true, msg:'somting went wrong'
+  })
+    }
   }
   useEffect(() => {
     fetchApi(url)
@@ -56,13 +75,8 @@ export const ShopContextProvider = ({children}) => {
   const handleAddRm = (ssh, d) => {
     let ind = -1;
     itemCart.forEach((data, index) => {
-      console.log('data', data)
-      console.log('ssh', ssh)
       if(data.id === ssh.id)
         ind = index
-        console.log('ind',ind)
-        console.log('data',data.id)
-        console.log('ssh',ssh.id)
     });
     const tmpArray = itemCart;
     tmpArray[ind].amount += d;
@@ -98,7 +112,7 @@ export const ShopContextProvider = ({children}) => {
   
   // context providers
   
-  const contextValue = {data, setItemCart, itemCart, handleClick, itemCart, btn,warning, handleRemove, price, handleAddRm}
+  const contextValue = {data, setItemCart, itemCart, handleClick, itemCart, btn,warning, handleRemove, price, handleAddRm,load,Error}
   
   return <ShopContext.Provider value={contextValue}>{children}
     </ShopContext.Provider>
